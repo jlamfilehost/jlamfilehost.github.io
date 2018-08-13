@@ -1,14 +1,14 @@
 # jlamfilehost.github.io
 Hosting of useful files online
 
-### File listing: [listing.md][listing]
+### About
+
+See [index.html](./index.html) for more details.
 
 ### Build
 
 Make sure the `tree` command is installed.
 
 ```bash
-tree -fi > listing.md
+tree -fJ -o listing.json
 ```
-
-[listing]: ./listing.md

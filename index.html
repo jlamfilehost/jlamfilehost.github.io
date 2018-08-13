@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>jlamfilehost.github.io | Hosting of useful files online.</title>
+  </head>
+  <body>
+
+    <h1>jlamfilehost.github.io</h1>
+    <p>Hosting of useful files online.</p>
+
+    <hr>
+
+    <h3>Listing</h3>
+    <script>
+      // print directory tree
+      let printData = function(data) {
+        console.log("Got it", data);
+      };
+
+      // fetch json from listing.json
+      let req = new XMLHttpRequest();
+      req.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200)
+          printData(this.response);
+      };
+      req.open("GET", "./listing.json");
+      req.send();
+    </script>
+
+    <hr>
+
+    <h3>About</h3>
+    <p>I made this repo when I realized I had a lot of documents that I wanted available to me very often (mostly textbooks or music scores). Hopefully it can help somebody else as well!</p>
+    <p>I will make a (content-less) fork-able version soon.</p>
+
+    <hr>
+
+    <h3>Build</h3>
+    <p>Make sure the <code>tree</code> command is installed. Run the command `tree -fJ -o listing.json` to update the JSON listing.</p>
+
+  </body>
+</html>

@@ -10,5 +10,5 @@ See [index.html](./index.html) for more details.
 Make sure the `tree` command is installed.
 
 ```bash
-tree -fJ -o listing.json
+tree -fiJ --noreport -o listing.json
 ```

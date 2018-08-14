@@ -11,21 +11,7 @@
     <hr>
 
     <h3>Listing</h3>
-    <script>
-      // print directory tree
-      let printData = function(data) {
-        console.log("Got it", data);
-      };
-
-      // fetch json from listing.json
-      let req = new XMLHttpRequest();
-      req.onreadystatechange = function() {
-        if(this.readyState == 4 && this.status == 200)
-          printData(this.response);
-      };
-      req.open("GET", "./listing.json");
-      req.send();
-    </script>
+    <ul id='listing-elem'></ul>
 
     <hr>
 
@@ -36,7 +22,37 @@
     <hr>
 
     <h3>Build</h3>
-    <p>Make sure the <code>tree</code> command is installed. Run the command `tree -fJ -o listing.json` to update the JSON listing.</p>
+    <p>Make sure the <code>tree</code> command is installed. Run the command <code>tree -fiJ --noreport -o listing.json</code> to update the JSON listing.</p>
+
+    <script>
+      // get elem
+      let elem = document.querySelector('#listing-elem');
+
+      // print directory tree recursively
+      let printDir = function(dir) {
+        console.log('test', dir);
+
+        dir.forEach(item => {
+          if(item.type == 'directory') {
+            printDir(item.contents);
+          } else {
+            elem.innerHTML += `<li><a href='${item.name}' target='_blank'>${item.name}</a></li>`;
+          }
+        });
+      };
+
+      // fetch json from listing.json
+      let req = new XMLHttpRequest();
+      req.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200) {
+          console.log('test');
+          printDir(this.response);
+        }
+      };
+      req.responseType = 'json';
+      req.open("GET", "./listing.json");
+      req.send();
+    </script>
 
   </body>
 </html>

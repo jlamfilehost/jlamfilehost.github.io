@@ -30,8 +30,6 @@
 
       // print directory tree recursively
       let printDir = function(dir) {
-        console.log('test', dir);
-
         dir.forEach(item => {
           if(item.type == 'directory') {
             printDir(item.contents);
@@ -44,10 +42,8 @@
       // fetch json from listing.json
       let req = new XMLHttpRequest();
       req.onreadystatechange = function() {
-        if(this.readyState == 4 && this.status == 200) {
-          console.log('test');
+        if(this.readyState == 4 && this.status == 200)
           printDir(this.response);
-        }
       };
       req.responseType = 'json';
       req.open("GET", "./listing.json");

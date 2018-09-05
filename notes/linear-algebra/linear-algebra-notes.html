@@ -1,0 +1,75 @@
+<!doctype html><html><head><title>Linear Algebra Notes</title></head><body><div id='c'>
+
+# Intro to Linear Algebra
+### Prof. Smyth
+### website: faculty.cooper.edu/smyth
+### textbook: Elementary Linear Algebra, 10th Edition (Howard Anton)
+
+---
+
+### Basic vector definitions
+
+**vector**:
+- informal: a quantity with a magnitude and a direction
+- formal: any element of a vector space
+
+Examples: force, velocity, acceleration, displacement
+
+For this course, we deal mostly with 2D and 3D vectors, although we will also work with arbitrary nD vectors.
+
+**scalar**: a quantity with magnitude only
+
+A 2D or 3D vector may be represented by an arrow with length corresponding to the vector's magnitude, direction same as that of the vector.
+- Note that arrow has a starting and ending position, which do not exist in a vector
+
+**standard position**: when the tail of a vector lies at the origin
+
+---
+
+### Adding vectors (geometrically)
+
+Only vectors from the same space (dimensionality) can be added.
+
+**tip-to-tail addition**: geometric version of vector addition, put head of one of first addend to the tail of the second; the vector sum has the same tail as the first addend and the same head as the second
+
+- Using tip-to-tail diagram and reversing the order of addends makes it easy to see that the two are commutative; i.e., the resulting diagram forms a parallelogram, which meet at the tail and the head of the vector sum
+
+**zero vector**: a vector with length 0 and no direction
+- Note that this is not the same thing as 0 (the scalar value)
+
+$\vec{0}+\vec{v}=\vec{v}+\vec{0}=\vec{v}$
+
+$-\vec{v}$: a vector with same magnitude as $\vec{v}$ but opposite direction
+
+$-\vec{v}+\vec{v}=\vec{0}$
+
+---
+
+### Subtracting vectors (geometrically)
+
+Define: $\vec{v}-\vec{w}=\vec{v}+(-\vec{w})$
+
+Note that $\vec{w}+(\vec{v}-\vec{w})=\vec{v}$, i.e., the difference is what you add to $\vec{w}$ to get $\vec{v}$. If both vectors are given with the same starting point, then the difference is the vector whose tail is at the head of $\vec{w}$ and whose head is at the head of $\vec{v}$.
+
+---
+
+### Scaling vectors (geometrically)
+
+Let k be the scale factor.
+
+- Case 1: $k>0$, $\vec{v}\neq\vec{0}$
+$k\vec{v}$ is vector whose magnitude is k times the magnitude of $\vec{v}$ and whose direction is the same as the direction of $\vec{v}$.
+
+- Case 2: $k<0$, $\vec{v}\neq\vec{0}$
+$k\vec{v}$ is vector whose magnitude is k times the magnitude of $\vec{v}$ and whose direction is the opposite as the direction of $\vec{v}$.
+
+- Case 3: $k=0$ or $\vec{v}=\vec{0}$
+$k\vec{v}=\vec{0}$
+
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+<script src='https://cdn.rawgit.com/showdownjs/showdown/1.8.6/dist/showdown.min.js'></script>
+<script>MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$']]}});(e=document.querySelector('#c')).innerHTML=new showdown.Converter().makeHtml(e.innerHTML)</script>
+<style>body{font-family:monospace}#c{white-space:pre-wrap}#c>*{margin:0}.t{display:inline}</style>
+</body>
+</html>

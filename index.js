@@ -14,7 +14,7 @@ const create_index = (dirname, dir_list, file_list, all_file_list) => {
 <html>
   <head>
     <title>Directory Listing</title>
-    <link rel='stylesheet' href='${base_dir}/styles.css'>
+    <link rel='stylesheet' href='/styles.css'>
   </head>
   <body>
     <h1>Directories</h1>`;
@@ -73,7 +73,6 @@ const read_dir = dirname => {
       if(ignore_pattern.test(filename))
         continue file_iterator;
 
-    console.log("PATH: " + filename);
     let stats = fs.statSync(base_dir + '/' + dirname + '/' + filename);
     (stats.isDirectory() ? dir_list : file_list).push({
       name: filename,
@@ -97,5 +96,3 @@ const read_dir = dirname => {
 
 // begin recursive reading
 let [dir_list, file_list, all_file_list] = read_dir(first_entry);
-
-console.log(dir_list, file_list, all_file_list);

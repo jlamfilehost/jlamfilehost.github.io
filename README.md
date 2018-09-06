@@ -3,12 +3,12 @@ Hosting of useful files online
 
 ### About
 
-See [index.html](./index.html) for more details.
+See [index.html](./index.html) for the listing.
 
 ### Build
 
-Make sure the `tree` command is installed.
+Make sure you have [Node.js](https://nodejs.org/en/) installed.
 
 ```bash
-tree -fiJ --noreport -o listing.json
+node index.js
 ```

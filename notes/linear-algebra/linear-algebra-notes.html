@@ -31,7 +31,6 @@ A 2D or 3D vector may be represented by an arrow with length corresponding to th
 Only vectors from the same space (dimensionality) can be added.
 
 **tip-to-tail addition**: geometric version of vector addition, put head of one of first addend to the tail of the second; the vector sum has the same tail as the first addend and the same head as the second
-
 - Using tip-to-tail diagram and reversing the order of addends makes it easy to see that the two are commutative; i.e., the resulting diagram forms a parallelogram, which meet at the tail and the head of the vector sum
 
 **zero vector**: a vector with length 0 and no direction
@@ -56,20 +55,50 @@ Note that $\vec{w}+(\vec{v}-\vec{w})=\vec{v}$, i.e., the difference is what you 
 ### Scaling vectors (geometrically)
 
 Let k be the scale factor.
-
 - Case 1: $k>0$, $\vec{v}\neq\vec{0}$
 $k\vec{v}$ is vector whose magnitude is k times the magnitude of $\vec{v}$ and whose direction is the same as the direction of $\vec{v}$.
-
 - Case 2: $k<0$, $\vec{v}\neq\vec{0}$
 $k\vec{v}$ is vector whose magnitude is k times the magnitude of $\vec{v}$ and whose direction is the opposite as the direction of $\vec{v}$.
-
 - Case 3: $k=0$ or $\vec{v}=\vec{0}$
 $k\vec{v}=\vec{0}$
 
+---
+
+### Linear combination
+
+**linear combination**: If $\vec{v_1},\vec{v_2},\ldots\vec{v_n}$ are vectors of the same dimensionality, and c_1, c_2, ... c_n are scalars, then the vector sum $c_1\vec{v_1}+c_2\vec{v_2}+\ldots+c_n\vec{v_n}$ is called the linear combination of the set ${\vec{v_1},\vec{v_2},\ldots\vec{v_n}}$.
+- The combination of the empty set is $\vec{0}$.
+
+**span**: of a set of vectors is the collection of all linear combinations of the set
+- If standard position enforced, span of a single vector is a line unless $\vec{v}=\vec{0}$.
+- If standard position enforced and $\vec{v_1}\neq k\vec{v_2}$, span of a set of two vectors is a plane.
+    - The vectors create a non-orthagonal grid, which can be used as a coordinate system to represent any point on the plane. Sometimes, just the coefficients of the two vectors will be listed (similar to how coordinates are listed as $(x,y)$. The two vectors are called the **basis**, and a coordinate on the plane is represented like so: $\begin{bmatrix}3\\ -2\end{bmatrix}_B$
+
+---
+
+### Vector components
+
+$\vec{v}=\langle x_2-x_1,y_2-y_1\rangle$, if $(x_1,y_1)$ are the coordinates of the vector's tail and $(x_2,y_2)$ are the coordinates of the vector's head.
+- If standard position, $\vec{v}=\langle x,y\rangle$.
+
+Adding in component form means adding components. If $\vec{v}=\langle x_1,y_1\rangle$ and $\vec{w}=\langle x_2,y_2\rangle$, $\vec{v+w}=\langle x_1+x_2,y_1+y_2\rangle$.
+
+Scaling in component form means multiplying components by scalar. If k is the scalar and $\vec{v}=\langle x,y\rangle$, $k\vec{v}=\langle kx,ky\rangle$.
+
 </div>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=default'></script>
+<script type='text/x-mathjax-config'>MathJax.Hub.Config({jax:["input/TeX","output/SVG"],tex2jax:{inlineMath:[['$','$']]}})</script>
 <script src='https://cdn.rawgit.com/showdownjs/showdown/1.8.6/dist/showdown.min.js'></script>
-<script>MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$']]}});(e=document.querySelector('#c')).innerHTML=new showdown.Converter().makeHtml(e.innerHTML)</script>
+<script>c=new showdown.Converter();c.setOption('literalMidWordUnderscores',true);(e=document.querySelector('#c')).innerHTML=c.makeHtml(e.innerHTML)</script>
+<style>body{font-family:monospace}#c{white-space:pre-wrap}#c>*{margin:0}.t{display:inline}</style>
+</body>
+</html>
+
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=default'></script>
+<script type='text/x-mathjax-config'>MathJax.Hub.Config({jax:["input/TeX","output/SVG"],tex2jax:{inlineMath:[['$','$']]}})</script>
+<script src='https://cdn.rawgit.com/showdownjs/showdown/1.8.6/dist/showdown.min.js'></script>
+<script>c=new showdown.Converter();c.setOption('literalMidWordUnderscores',true);(e=document.querySelector('#c')).innerHTML=c.makeHtml(e.innerHTML)</script>
 <style>body{font-family:monospace}#c{white-space:pre-wrap}#c>*{margin:0}.t{display:inline}</style>
 </body>
 </html>

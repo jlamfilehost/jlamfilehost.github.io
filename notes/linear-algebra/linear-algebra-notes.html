@@ -85,6 +85,88 @@ Adding in component form means adding components. If $\vec{v}=\langle x_1,y_1\ra
 
 Scaling in component form means multiplying components by scalar. If k is the scalar and $\vec{v}=\langle x,y\rangle$, $k\vec{v}=\langle kx,ky\rangle$.
 
+... SKIPPING TO NOTES FROM 9/17/18 FOR NATHANIEL
+
+### 3.3 Orthagonal Decomposition
+
+**Note**: This is a very important topic and will definitely come up on the first test and cumulative final. Memorize the formula for the projection and the orthagonal vector.
+
+Given two arbitrary vectors $\vec{a}\neq\vec{0}$ and $\vec{u}$. It helps to give both vectors the same starting point for visualization.
+
+Orthagonal decomposition can be thought of as the following: Find two vectors, $\vec{w_1}$ and $\vec{w_2}$, such that:
+
+- $\vec{w_1}+\vec{w_2}=\vec{u}$
+- $\vec{w_1}\parallel\vec{a}$.
+- $\vec{w_2}\perp\vec{a}$
+
+In other words, find two vectors that sum to $\vec{u}$, such that one is parallel to and one is orthagonal to $\vec{a}$.
+
+Note that:
+
+- $\vec{a}\perp\vec{u}\Rightarrow\vec{w_1}=\vec{0},\vec{w_2}=\vec{u}$
+- $\vec{a}\parallel\vec{u}\Rightarrow\vec{w_1}=\vec{u},\vec{w_2}=\vec{0}$
+- If $\vec{a}\cdot\vec{u}<0$ (if the angle between the vectors is obtuse), $\vec{w_1}$ goes in the opposite direction of $\vec{a}$ (and vice versa when $\vec{a}\cdot\vec{u}>0)$
+
+Formula proof for $\vec{w_1}$ and $\vec{w_2}$ (memorize final equations):
+
+> Since $\vec{w_1}\parallel\vec{a}$, $\vec{w_1}=k\vec{a}$ for some scalar $k$. (This is true without the reciprocal statement because $\vec{a}\neq\vec{0}$ is given).
+> $\vec{u}=k\vec{a}+\vec{w_2}$
+> $\vec{u}\cdot\vec{a}=(k\vec{a}+\vec{w_2})\cdot\vec{a}$
+> $=k(\vec{a}\cdot\vec{a})+\vec{w_2}\cdot\vec{a}$
+> $=k\Vert\vec{a}\Vert^2+0=k\Vert\vec{a}\Vert^2$
+> $\Rightarrow k=\frac{\vec{u}\cdot\vec{a}}{\Vert\vec{a}\Vert^2}$
+> $\Rightarrow\vec{w_1}=\frac{\vec{u}\cdot\vec{a}}{\Vert\vec{a}\Vert^2}\vec{a},\vec{w_2}=\vec{u}-\frac{\vec{u}\cdot\vec{a}}{\Vert\vec{a}\Vert^2}\vec{a}$
+
+Here are the more formal terms for which $\vec{w_1}$ and $\vec{w_2}$ have been serving as placeholders:
+
+- **(orthagonal) projection of $\vec{u}$ onto $\vec{a}$**: $\text{proj}_{\vec{a}}\vec{u}=\vec{w_1}=\frac{\vec{u}\cdot\vec{a}}{\Vert\vec{a}\Vert^2}\vec{a}$
+- **vector component of $\vec{u}\perp\vec{a}$**: $\vec{w_2}=\vec{u}-\frac{\vec{u}\cdot\vec{a}}{\Vert\vec{a}\Vert^2}\vec{a}$
+
+Note that all orthagonal decomposition happens in a plane in space, so this can be applied to any two vectors in the same N-dimensional space.
+
+---
+
+### Point-normal form of a plane
+
+Any plane in 3-space can be specified by a **normal vector** (vector orthagonal to the plane that is not $\vec{0}$) and a point that lies on the plane.
+
+To derive the equation of a plane in **point-normal form**:
+
+> $P_0=(x_0,y_0,z_0)$ is the given point that lies on the plane, $P=(x,y,z)$ is an arbitrary point on the plane, and $\vec{n}=\langle a,b,c\rangle$ is the vector normal to the plane.
+> $\vec{P_0P}\perp\vec{n}\Rightarrow\vec{n}\cdot\vec{P_0P}=0$
+> $a(x-x_0)+b(y-y_0)+c(z-z_0)=0$ (point-normal form of a plane)
+
+The **general form** of a plane may be done by collecting constants into another constant $d$:
+
+> $ax-ax_0+by-by_0+cz-cz_0=0$
+> Let $d=-ax_0-by_0-cz_0$
+> $ax+by+cz+d=0$ (general form of a plane)
+
+Either general form or point-normal form can be used to find a normal vector to the plane (its components are the coefficients of $x,y,z$) and find a point on the plane ($x_0,y_0,z_0$ given in point-normal form; requires factoring in general form).
+
+Note that while either form denotes a unique plane in space, the same plane has infinitely many correct point-normal forms (and general forms) if differnet normal vectors or starting points are chosen.
+
+*Application: Use three points to find point-normal form of plane.*
+
+> Another way to uniquely identify a plane is by identifying three unique, non-collinear points on that plane. The three points can be used to find the point-normal form of the plane.
+> Three points, P, Q, and R are given.
+> First, the noncollinearity of the points must be tested. If $\vec{PQ}\not\parallel\vec{PR}$ (or any combination of two connecting vectors), then the points are noncollinear.
+> To find the normal vector, we will have to satisfy the linear system of equations: $\begin{cases}\vec{n}\cdot\vec{PQ}=0\newline\vec{n}\cdot\vec{PR}=0\end{cases}$.
+> This may require substitution of easy numbers for the components of $\vec{n}$ as necessary to easily solve for a particular solution. Remember that any scalar multiple of the normal vector is a valid solution to this system of equations, so by setting one component of $\vec{n}$ to a non-zero value (assuming the component is not 0), this will help find a specific normal vector.
+> Once the normal vector has been found, use it and one of the given points to write a point-normal equation for the plane.
+
+**Vector form of a plane**
+
+If the points $P_0$ and $P$ are represented as position vectors $\vec{r_0}$ and $\vec{r}$ (respectively), the equation for a plane in **vector form** is $\vec{n}\cdot(\vec{r}-\vec{r_0})$.
+
+---
+
+### Point-normal form of a line
+
+The point-normal form of a plane can be reduced to 2-space as the equation of a line.
+
+The **point-normal form of a line** is $a(x-x_0)+b(y-y_0)=0$. Similar to standard form linear equations, this has the advantage (over point-slope or slope-intercept forms) of being able to express vertical lines. The normal vector to this line is $\langle a,b\rangle$.
+
 </div>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=default'></script>
 <script type='text/x-mathjax-config'>MathJax.Hub.Config({jax:["input/TeX","output/SVG"],tex2jax:{inlineMath:[['$','$']]}})</script>

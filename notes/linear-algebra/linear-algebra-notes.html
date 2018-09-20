@@ -7,7 +7,7 @@
 
 ---
 
-### Basic vector definitions
+### 3.1 Basic vector definitions
 
 **vector**:
 - informal: a quantity with a magnitude and a direction
@@ -62,6 +62,10 @@ $k\vec{v}$ is vector whose magnitude is k times the magnitude of $\vec{v}$ and w
 - Case 3: $k=0$ or $\vec{v}=\vec{0}$
 $k\vec{v}=\vec{0}$
 
+**parallel**: describes two vectors such that one vector is a scalar multiple of another
+- Note that $\vec{0}$ is parallel to all vectors by this definition.
+- Note that both vectors do not have to be scalar multiples of each other (consider $\vec{0}$).
+
 ---
 
 ### Linear combination
@@ -85,7 +89,55 @@ Adding in component form means adding components. If $\vec{v}=\langle x_1,y_1\ra
 
 Scaling in component form means multiplying components by scalar. If k is the scalar and $\vec{v}=\langle x,y\rangle$, $k\vec{v}=\langle kx,ky\rangle$.
 
-... SKIPPING TO NOTES FROM 9/17/18 FOR NATHANIEL
+---
+
+### 3.2 Norm, unit vectors, and distance
+
+**norm**: magnitude of vector $\vec{v}$ is $\Vert\vec{v}\Vert=\sqrt{v_1^2+v_2^2+\cdots+v_n^2}$ (Pythagorean theorem in N-dimensions)
+- $\Vert k\vec{u}\Vert=|k|\Vert\vec{u}\Vert$
+
+**unit vector**: a vector with a norm of 1.
+- A unit vector in the direction of $\vec{v}$ is $\frac{1}{\Vert\vec{v}\Vert}\vec{v}$. Multiplying by the inverse of its norm is called **normalizing** a vector.
+- **standard unit vector**: unit vector in directions of coordinate axes (one component is 1; the rest are 0). For $\mathbb{R}^n$, there are $n$ standard unit vectors.
+- Any vector can be written as a linear combination of standard unit vectors.
+
+**distance**: $d(\vec{u},\vec{v})=\Vert\vec{v}-\vec{u}\Vert$
+
+---
+
+### Dot product (Euclidean inner product)
+
+**dot product** of two vectors (geometric form): $\vec{v}\cdot\vec{u}=\Vert\vec{v}\Vert\Vert\vec{u}\Vert \cos\theta$.
+- Rearranged to solve for angle: $\theta=\arccos\frac{\vec{v}\cdot\vec{u}}{\Vert\vec{v}\Vert\Vert\vec{u}\Vert}$
+    - Note that by the **Cauchy-Schwartz Inequality** (proof not provided), the numerator $\vec{v}\cdot\vec{u}\leq\Vert\vec{v}\Vert\Vert\vec{u}\Vert$ for all vectors, so the input to the $\arccos$ is always in the domain. (Proof not included here.)
+    - If $\vec{v}\cdot\vec{u}>0$, the angle is obtuse (includes straight angles).
+    - If $\vec{v}\cdot\vec{u}<0$, the angle is acute (includes 0 angle).
+    - If $\vec{v}\cdot\vec{u}=0$, the vectors are **orthagonal**.
+
+Properties of the dot product (derived from geometric form):
+- $\vec{u}\cdot\vec{v}=\vec{v}\cdot\vec{u}$ (commutativity)
+- $\vec{u}\cdot(\vec{v}+\vec{w})=\vec{u}\cdot\vec{v}+\vec{u}\cdot\vec{w}$ (distributivity)
+- $k(\vec{u}\cdot\vec{v})=k\vec{u}\cdot\vec{v}=\vec{u}\cdot k\vec{v}$ (homogeneity)
+- $\vec{v}\cdot\vec{v}\geq 0$ and $\vec{v}\cdot\vec{v}=0$ if $\vec{v}=0$ (positivity).
+
+Using the law of cosines, the component form of the dot product can be derived:
+
+> $\Vert\vec{v}-\vec{u}\Vert^2=\Vert\vec{v}\Vert^2\Vert\vec{u}\Vert^2-2\Vert\vec{v}\Vert\Vert\vec{u}\Vert\cos\theta$
+> $\Vert\vec{v}\Vert\Vert\vec{u}\Vert\cos\theta=\frac{1}{2}(\Vert\vec{v}\Vert^2+\Vert\vec{u}\Vert^2-\Vert\vec{v}-\vec{u}\Vert^2)$
+> components cancel out on right-hand side to get $\frac{1}{2}(2u_1v_1+2u_2v_2+\cdots+2u_nv_n)=u_1v_1+u_2v_2+\cdots u_nv_n$
+> left side is equal to dot product, thus $\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+\cdots u_nv_n$.
+
+**dot product (component form)**: The dot product is the sum of the products of corresponding components of two vectors of the same dimension.
+
+Properties of the dot product (derived from component form):
+- $\vec{v}\cdot\vec{v}=v_1^2+v_2^2+v_3^2\cdot v_n^2=\Vert\vec{v}\Vert^2$
+
+**orthagonal**: Describes two vectors whose dot products are 0.
+- In two or three dimensions, this is recognized as perpendicular (in all cases except those involving $\vec{0}$).
+- The zero vector $\vec{0}$ is orthagonal to all vectors by this definition (but not perpendicular). As noted before, $\vec{0}$ is also parallel to all vectors.
+- This can be used for N-dimensional vectors, where right angles (and therefore perpendicularity) may not be easily defined.
+
+---
 
 ### 3.3 Orthagonal Decomposition
 

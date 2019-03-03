@@ -17,7 +17,7 @@ const create_index = (dirname, dir_list, file_list, all_file_list) => {
   </head>
   <body>
     <h1>Jonathan Lam's File Host</h1>
-    <p><a href='https://www.jonlamdev.com'>Jonathan Lam's website</a></p>
+    <p><a href='http://www.jonlamdev.com'>Jonathan Lam's website</a></p>
     <p><strong>Directories</strong></p>`;
 
   // sort elements by name property

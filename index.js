@@ -14,10 +14,11 @@ const create_index = (dirname, dir_list, file_list, all_file_list) => {
 <html>
   <head>
     <title>Directory Listing</title>
-    <link rel='stylesheet' href='/styles.css'>
   </head>
   <body>
-    <h1>Directories</h1>`;
+    <h1>Jonathan Lam's File Host</h1>
+    <p><a href='https://www.jonlamdev.com'>Jonathan Lam's website</a></p>
+    <p><strong>Directories</strong></p>`;
 
   // sort elements by name property
   const sort_name = (a, b) => a.name.localeCompare(b.name);
@@ -35,7 +36,7 @@ const create_index = (dirname, dir_list, file_list, all_file_list) => {
     res += `<p><a href='${file.name}/index.html'>${file.name}</a></p>`;
   }
 
-  res += '<h1>Files</h1>';
+  res += '<p><strong>Files</strong></p>';
   // print files
   file_list.sort(sort_name);
   for(let file of file_list) {
@@ -43,7 +44,7 @@ const create_index = (dirname, dir_list, file_list, all_file_list) => {
   }
 
   if(dir_list.length > 0) {
-    res += '<h1>Nested files</h1>';
+    res += '<p><strong>Nested files</strong></p>';
     // print nested files
     all_file_list.sort(sort_name);
     for(let file of all_file_list) {
